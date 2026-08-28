@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Esther Enuma — AI Automation Specialist</title>
+<meta name="description" content="Esther Enuma builds AI automation systems on n8n: voice receptionists, lead pipelines, and order flows for ecommerce brands and clinics.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0c0c0c;
+  --bg-2:#121212;
+  --fg:#ededea;
+  --fg-2:#9a9a94;
+  --fg-3:#82827b;
+  --line:#232322;
+  --signal:#c3f53c;
+  --mono:'IBM Plex Mono',Menlo,Consolas,monospace;
+  --sans:'IBM Plex Sans',-apple-system,Arial,sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;}
+body{
+  background:var(--bg);color:var(--fg);
+  font-family:var(--sans);font-size:15.5px;line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+}
+a{color:inherit;text-decoration:none;}
+:focus-visible{outline:2px solid var(--signal);outline-offset:2px;}
+
+.wrap{max-width:1080px;margin:0 auto;padding:0 40px;}
+
+.mono{font-family:var(--mono);}
+.lbl{
+  font-family:var(--mono);font-size:11px;letter-spacing:0.08em;
+  text-transform:uppercase;color:var(--fg-3);
+}
+
+/* TOP BAR */
+.bar{border-bottom:1px solid var(--line);position:sticky;top:0;background:rgba(12,12,12,.9);backdrop-filter:blur(8px);z-index:20;}
+.bar .wrap{display:flex;justify-content:space-between;align-items:center;height:58px;gap:20px;}
+.bar .id{font-family:var(--mono);font-size:13px;letter-spacing:-0.01em;}
+.bar .id b{font-weight:500;}
+.bar .id span{color:var(--fg-3);}
+.bar nav{display:flex;gap:2px;}
+.bar nav a{
+  font-family:var(--mono);font-size:12px;color:var(--fg-2);
+  padding:6px 12px;border:1px solid transparent;
+}
+.bar nav a:hover{color:var(--fg);border-color:var(--line);}
+.navbtn{
+  display:none;font-family:var(--mono);font-size:12px;letter-spacing:0.04em;
+  color:var(--fg);background:none;border:1px solid var(--line);
+  padding:0 14px;min-height:44px;min-width:44px;cursor:pointer;
+  align-items:center;justify-content:center;
+}
+.navbtn:hover{border-color:var(--fg-2);}
+.mnav{display:none;border-top:1px solid var(--line);}
+.mnav.open{display:block;}
+.mnav a{
+  display:flex;align-items:center;font-family:var(--mono);font-size:13px;
+  color:var(--fg-2);min-height:48px;border-top:1px solid var(--line);
+}
+.mnav .wrap > a:first-child{border-top:0;}
+.mnav a:hover{color:var(--fg);}
+
+/* HEAD */
+.head{border-bottom:1px solid var(--line);padding:76px 0 64px;}
+.head .stat{
+  font-family:var(--mono);font-size:12px;color:var(--fg-2);
+  display:flex;align-items:center;gap:9px;margin-bottom:44px;
+}
+.head .stat i{width:6px;height:6px;background:var(--signal);display:block;}
+.head h1{
+  font-weight:500;font-size:clamp(32px,4.6vw,52px);line-height:1.12;
+  letter-spacing:-0.025em;max-width:20ch;margin-bottom:32px;
+}
+.head h1 u{text-decoration:none;color:var(--signal);}
+.head .sub{color:var(--fg-2);max-width:58ch;font-size:16.5px;margin-bottom:44px;}
+.acts{display:flex;gap:12px;flex-wrap:wrap;}
+.act{
+  font-family:var(--mono);font-size:13px;padding:11px 20px;
+  border:1px solid var(--line);color:var(--fg);
+}
+.act:hover{border-color:var(--fg-2);}
+.act.key{background:var(--signal);border-color:var(--signal);color:#0c0c0c;font-weight:500;}
+.act.key:hover{background:#d3ff5c;border-color:#d3ff5c;}
+
+section[id],header[id]{scroll-margin-top:74px;}
+
+/* SPEC ROWS */
+.sec{border-bottom:1px solid var(--line);padding:64px 0;}
+.sec-head{display:grid;grid-template-columns:180px 1fr;gap:40px;margin-bottom:44px;}
+.sec-head h2{font-weight:500;font-size:26px;line-height:1.2;letter-spacing:-0.02em;max-width:24ch;}
+.row{display:grid;grid-template-columns:180px 1fr;gap:40px;padding:20px 0;border-top:1px solid var(--line);}
+.row p{color:var(--fg-2);max-width:70ch;}
+.row strong{color:var(--fg);font-weight:500;}
+.row .val{font-family:var(--mono);font-size:13.5px;color:var(--fg-2);}
+
+/* WORK */
+.build{border-top:1px solid var(--line);padding:44px 0;}
+.build-top{display:grid;grid-template-columns:180px 1fr;gap:40px;margin-bottom:32px;}
+.build-top .idx{font-family:var(--mono);font-size:12px;color:var(--signal);}
+.build-top h3{font-weight:500;font-size:clamp(22px,2.8vw,30px);letter-spacing:-0.02em;margin-bottom:8px;}
+.build-top .plat{font-family:var(--mono);font-size:11.5px;color:var(--fg-3);}
+.build-grid{display:grid;grid-template-columns:180px 1fr;gap:40px;}
+.build-body{display:flex;flex-direction:column;gap:26px;}
+.ba{display:grid;grid-template-columns:1fr 1fr;gap:36px;}
+.ba h4{margin-bottom:10px;}
+.ba.after h4{color:var(--signal);}
+.ba p{color:var(--fg-2);font-size:14.5px;}
+.ba em{color:var(--fg);font-style:italic;}
+.chain{
+  display:flex;flex-wrap:wrap;gap:0;border:1px solid var(--line);
+  font-family:var(--mono);font-size:11.5px;
+}
+.chain span{padding:11px 14px;border-right:1px solid var(--line);color:var(--fg-2);white-space:nowrap;}
+.chain span:last-child{border-right:0;}
+.chain span.hot{color:var(--signal);}
+.dec{display:grid;grid-template-columns:1fr;gap:8px;border-left:2px solid var(--signal);padding-left:16px;}
+.dec p{color:var(--fg-2);font-size:14.5px;}
+.res{display:flex;align-items:baseline;gap:18px;flex-wrap:wrap;padding-top:4px;}
+.res .n{font-family:var(--mono);font-size:clamp(28px,3.4vw,42px);color:var(--signal);letter-spacing:-0.03em;white-space:nowrap;line-height:1;}
+.res .c{color:var(--fg-2);font-size:14px;flex:1;min-width:240px;}
+.stack{font-family:var(--mono);font-size:11.5px;color:var(--fg-3);}
+
+/* TEACH */
+.wks-wrap{display:grid;grid-template-columns:180px 1fr;gap:40px;margin-top:24px;}
+.wk{display:grid;grid-template-columns:80px 1fr;gap:20px;padding:13px 0;border-top:1px solid var(--line);font-size:14.5px;}
+.wk .n{font-family:var(--mono);font-size:12px;color:var(--fg-3);}
+.wk .t{color:var(--fg-2);}
+
+/* STATUS TAGS + BUILD LIBRARY */
+.tag{font-family:var(--mono);font-size:10.5px;letter-spacing:0.07em;text-transform:uppercase;padding:4px 9px;border:1px solid var(--line);color:var(--fg-3);display:inline-block;}
+.tag.live{color:var(--signal);border-color:#3d4d1e;}
+.tags{display:flex;gap:8px;flex-wrap:wrap;}
+.mini{display:grid;grid-template-columns:180px 1fr;gap:40px;border-top:1px solid var(--line);padding:30px 0;}
+.mini .meta{display:flex;flex-direction:column;gap:12px;}
+.mini .idx{font-family:var(--mono);font-size:12px;color:var(--signal);}
+.mini h3{font-weight:500;font-size:20px;letter-spacing:-0.015em;margin-bottom:10px;}
+.mini p{color:var(--fg-2);font-size:14.5px;max-width:72ch;margin-bottom:14px;}
+.mini .for{font-family:var(--mono);font-size:11.5px;color:var(--fg-3);margin-top:12px;line-height:1.9;}
+.mini .for b{color:var(--fg-2);font-weight:500;}
+.note{font-family:var(--mono);font-size:13px;color:var(--fg-3);max-width:74ch;margin-bottom:8px;}
+
+/* END */
+.end{padding:80px 0;}
+.end h2{font-weight:500;font-size:clamp(26px,3.6vw,40px);line-height:1.1;letter-spacing:-0.025em;max-width:20ch;margin-bottom:22px;}
+.end p{color:var(--fg-2);max-width:52ch;margin-bottom:34px;}
+footer{border-top:1px solid var(--line);padding:24px 0;}
+footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;font-family:var(--mono);font-size:11.5px;color:var(--fg-3);}
+
+@media (max-width:860px){
+  .wrap{padding:0 24px;}
+  .sec-head,.row,.build-top,.build-grid,.wks-wrap,.mini{grid-template-columns:1fr;gap:14px;}
+  .wks-wrap{margin-top:8px;}
+  .wks-wrap > div:first-child{display:none;}
+  .wk{grid-template-columns:56px 1fr;gap:12px;}
+  .ba{grid-template-columns:1fr;gap:24px;}
+  .bar nav{display:none;}
+  .navbtn{display:inline-flex;}
+  .sec{padding:48px 0;}
+  .head{padding:52px 0 44px;}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto;}}
+</style>
+</head>
+<body>
+
+<div class="bar">
+  <div class="wrap">
+    <div class="id"><b>esther enuma</b><span> / ai automation</span></div>
+    <nav>
+      <a href="#work">work</a>
+      <a href="#builds">builds</a>
+      <a href="#about">about</a>
+      <a href="#teaching">teaching</a>
+      <a href="#contact">contact</a>
+    </nav>
+    <button class="navbtn" id="navToggle" aria-expanded="false" aria-controls="mnav" aria-label="Open navigation menu">menu</button>
+  </div>
+  <div class="mnav" id="mnav">
+    <div class="wrap">
+      <a href="#work">work</a>
+      <a href="#builds">builds</a>
+      <a href="#about">about</a>
+      <a href="#teaching">teaching</a>
+      <a href="#contact">contact</a>
+    </div>
+  </div>
+</div>
+
+<header class="head">
+  <div class="wrap">
+    <div class="stat"><i></i>status: open for new automation projects</div>
+    <h1>I build the systems your team <u>stops doing by hand.</u></h1>
+    <p class="sub">Self-hosted n8n, AI agents, and voice receptionists. Phones answered in under two seconds, lead pipelines that score and route themselves, assistants that reply from your own sources, order updates that go out without anyone typing them. Built, documented, and handed over so your team owns them.</p>
+    <div class="acts">
+      <a href="#work" class="act key">see the systems</a>
+      <a href="#builds" class="act">what I build</a>
+      <a href="#contact" class="act">get in touch</a>
+    </div>
+  </div>
+</header>
+
+<!-- ============ 01 / WORK ============ -->
+<section class="sec" id="work">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="lbl">01 / Work</div>
+      <h2>Systems built end to end, with the decisions that made them hold.</h2>
+    </div>
+
+    <div class="build">
+      <div class="build-top">
+        <div class="meta">
+          <div class="idx">BUILD 01</div>
+          <div class="tags" style="margin-top:10px;"><span class="tag live">shipped</span><span class="tag">flagship</span></div>
+        </div>
+        <div>
+          <h3>AI Lead Qualification &amp; Routing</h3>
+          <div class="plat">intake form → database → llm scoring → branch routing</div>
+        </div>
+      </div>
+      <div class="build-grid">
+        <div></div>
+        <div class="build-body">
+          <div class="ba">
+            <div>
+              <h4>Before</h4>
+              <p>Every enquiry landed in a shared inbox. Someone had to read it, judge how serious it was, log it, and decide who should answer. Hot leads sat unread over weekends, and no two people scored a lead the same way.</p>
+            </div>
+            <div class="after">
+              <h4>After</h4>
+              <p>Intake form writes to a central table, an LLM returns a category, a score out of ten and a one-line rationale, and the result is parsed back and routed — hot straight to Slack with full context, warm to email, the rest into a nurture sequence.</p>
+            </div>
+          </div>
+          <div class="chain">
+            <span>form</span><span>table</span><span class="hot">ai scoring</span><span>parse</span><span>branch</span><span>slack</span><span>email</span><span>nurture</span>
+          </div>
+          <div class="dec">
+            <h4 class="lbl">Key decision</h4>
+            <p>The form writes to the table <em>before</em> the AI runs, so a model failure never loses a lead. Worst case it sits unscored, not gone.</p>
+          </div>
+          <div class="res">
+            <div class="n">&lt; 60 sec</div>
+            <div class="c">from enquiry received to scored and routed. Previously up to a full working day, longer across a weekend.</div>
+          </div>
+          <div class="stack">built in zapier so the team could maintain it in-house · forms · tables · openai · formatter · paths · slack · email</div>
+          <!-- EDIT: paste your Loom link below, then delete this comment
+          <div class="acts"><a class="act key" href="LOOM_URL" target="_blank" rel="noopener">▶ watch it run (3 min)</a></div>
+          -->
+        </div>
+      </div>
+    </div>
+
+    <div class="build">
+      <div class="build-top">
+        <div class="meta">
+          <div class="idx">BUILD 02</div>
+          <div class="tags" style="margin-top:10px;"><span class="tag live">shipped</span></div>
+        </div>
+        <div>
+          <h3>Customer-Facing Enquiry Assistant</h3>
+          <div class="plat">curated knowledge base → guarded assistant → lead capture</div>
+        </div>
+      </div>
+      <div class="build-grid">
+        <div></div>
+        <div class="build-body">
+          <div class="ba">
+            <div>
+              <h4>Before</h4>
+              <p>The same handful of questions, answered by a person, over and over, and only during working hours. Anyone browsing at 11pm got nothing and left.</p>
+            </div>
+            <div class="after">
+              <h4>After</h4>
+              <p>A branded assistant answers instantly from a curated knowledge base, under an explicit instruction set — no prices, no commitments, and it declines rather than guesses. Real buying intent gets pushed into the enquiry form.</p>
+            </div>
+          </div>
+          <div class="chain">
+            <span>knowledge base</span><span class="hot">assistant</span><span>guardrails</span><span>intent detected</span><span>form</span>
+          </div>
+          <div class="dec">
+            <h4 class="lbl">Key decision</h4>
+            <p>Architected one-way on purpose. The assistant can send people into the lead database but cannot read from it, so no customer data is reachable through a public interface.</p>
+          </div>
+          <div class="res">
+            <div class="n">24 / 7</div>
+            <div class="c">answering, qualifying, and capturing intent outside working hours — the window where most of the traffic actually arrives.</div>
+          </div>
+          <div class="stack">zapier chatbots · openai · zapier forms</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 02 / BUILDS ============ -->
+<section class="sec" id="builds">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="lbl">02 / What I build</div>
+      <h2>Six systems I build for clients, and who each one is for.</h2>
+    </div>
+    <p class="note">Delivered on self-hosted n8n unless a client needs to own and edit it themselves. Every build ships with a recorded walkthrough, documentation, and a handover call.</p>
+
+    <div class="mini">
+      <div class="meta">
+        <div class="idx">01</div>
+        <div class="tags"><span class="tag">in build</span><span class="tag">voice</span></div>
+      </div>
+      <div>
+        <h3>AI Voice Receptionist</h3>
+        <p>Answers the phone in about two seconds, day or night. Qualifies the caller, books straight into the calendar, texts the owner a summary, and hands off to a human when the conversation needs one. Owners estimate they miss five to ten percent of calls; measured, it is closer to a quarter.</p>
+        <div class="chain"><span class="hot">call answered</span><span>qualify</span><span>book</span><span>sms summary</span><span>human handoff</span></div>
+        <div class="for"><b>For:</b> dental practices · med spas · home services · clinics · voice agencies needing build capacity<br><b>Stack:</b> vapi / retell · n8n · twilio · google calendar</div>
+      </div>
+    </div>
+
+    <div class="mini">
+      <div class="meta">
+        <div class="idx">02</div>
+        <div class="tags"><span class="tag">in build</span></div>
+      </div>
+      <div>
+        <h3>Lead Response Engine</h3>
+        <p>The n8n version of Build 01 above, extended: captures every enquiry across form, DM and email, classifies intent, replies inside five minutes, and runs a three-touch follow-up so nothing goes quiet unattended. Leads that wait two hours are usually already talking to someone else.</p>
+        <div class="chain"><span>capture</span><span class="hot">classify</span><span>reply &lt; 5 min</span><span>3-touch follow-up</span><span>log</span></div>
+        <div class="for"><b>For:</b> any business where enquiries arrive faster than a person can triage them<br><b>Stack:</b> n8n · openai · airtable / notion · email · whatsapp</div>
+      </div>
+    </div>
+
+    <div class="mini">
+      <div class="meta">
+        <div class="idx">03</div>
+        <div class="tags"><span class="tag">in build</span></div>
+      </div>
+      <div>
+        <h3>Order &amp; Delivery Notifications</h3>
+        <p>Fills the silent window between payment and dispatch: confirmation, dispatch, delivery, review request, and automatic escalation when something goes wrong. That silence is where most “where is my order” tickets come from — commonly twenty to thirty percent of support volume.</p>
+        <div class="chain"><span>order</span><span>confirm</span><span>dispatch</span><span>deliver</span><span class="hot">review ask</span><span>escalate</span></div>
+        <div class="for"><b>For:</b> ecommerce and DTC brands · importers · multi-brand vendors<br><b>Stack:</b> n8n · shopify / woocommerce · whatsapp · email · airtable</div>
+      </div>
+    </div>
+
+    <div class="mini">
+      <div class="meta">
+        <div class="idx">04</div>
+        <div class="tags"><span class="tag">in build</span></div>
+      </div>
+      <div>
+        <h3>Supplier Sourcing &amp; Landed Cost</h3>
+        <p>Vets suppliers against a consistent checklist, computes true landed cost including freight, duty, clearing and FX, and flags the risky ones before money moves. Most import margins are guesses; this makes them arithmetic.</p>
+        <div class="chain"><span>supplier intake</span><span>vet</span><span class="hot">landed cost</span><span>risk flag</span><span>decision</span></div>
+        <div class="for"><b>For:</b> importers · curated marketplaces · wholesale and retail groups<br><b>Stack:</b> n8n · openai · airtable · fx and freight apis</div>
+      </div>
+    </div>
+
+    <div class="mini">
+      <div class="meta">
+        <div class="idx">05</div>
+        <div class="tags"><span class="tag">in build</span></div>
+      </div>
+      <div>
+        <h3>Content Repurposing Pipeline</h3>
+        <p>One asset in, ten out. A long video or article becomes clips, captions, and scheduled posts across platforms, with a human approval step before anything publishes.</p>
+        <div class="chain"><span>upload</span><span>transcribe</span><span class="hot">cut and caption</span><span>approve</span><span>schedule</span></div>
+        <div class="for"><b>For:</b> DTC brands · agencies · founders publishing consistently<br><b>Stack:</b> n8n · whisper · openai · buffer / meta api</div>
+      </div>
+    </div>
+
+    <div class="mini">
+      <div class="meta">
+        <div class="idx">06</div>
+        <div class="tags"><span class="tag">in build</span></div>
+      </div>
+      <div>
+        <h3>Owner Ops Dashboard</h3>
+        <p>Pulls sales, leads, delivery and support into one weekly digest written in plain English — what moved, what slipped, what needs a decision. For owners who currently find out by asking three people.</p>
+        <div class="chain"><span>pull sources</span><span>reconcile</span><span class="hot">summarise</span><span>weekly digest</span></div>
+        <div class="for"><b>For:</b> multi-brand groups · service businesses · anyone running operations on spreadsheets<br><b>Stack:</b> n8n · openai · supabase · notion · email</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 03 / ABOUT ============ -->
+<section class="sec" id="about">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="lbl">03 / About</div>
+      <h2>A builder first. I teach because I build, not the other way round.</h2>
+    </div>
+
+    <div class="row">
+      <div class="val">approach</div>
+      <div>
+        <p><strong>My delivery work happens in self-hosted n8n.</strong> It handles the things client work actually runs into — real branching logic, custom code where a no-code node runs out, self-hosting when data should not leave a client environment, and no per-task pricing that punishes a system for being used. When a client needs to own and edit the system themselves inside a tool they already pay for, I build it in Zapier or Make instead, and I say so up front.</p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="val">how I work</div>
+      <div>
+        <p>I start from the failure modes, not the happy path. What happens when the model returns nonsense, when the API is down, when someone submits the form twice, when the person who owns the process leaves. A system that only works on a good day is not finished. Every build is handed over with a recorded walkthrough and documentation, because a system nobody understands is a system that quietly dies.</p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="val">based</div>
+      <div class="val">Uyo, Nigeria — working globally, UK and US hours</div>
+    </div>
+    <div class="row">
+      <div class="val">automation</div>
+      <div class="val">n8n (self-hosted) · Zapier · Make</div>
+    </div>
+    <div class="row">
+      <div class="val">ai</div>
+      <div class="val">AI agents · multi-agent systems · RAG pipelines · prompt design · OpenAI, Claude, Gemini</div>
+    </div>
+    <div class="row">
+      <div class="val">voice</div>
+      <div class="val">Vapi · Retell · ElevenLabs · Twilio</div>
+    </div>
+    <div class="row">
+      <div class="val">data</div>
+      <div class="val">Airtable · Notion · Supabase · Pinecone · Google Sheets</div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 04 / TEACHING ============ -->
+<section class="sec" id="teaching">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="lbl">04 / Teaching</div>
+      <h2>I train other automation specialists.</h2>
+    </div>
+    <div class="row">
+      <div class="val">cybervast · cohort 3</div>
+      <div>
+        <p><strong>AI Automation Instructor.</strong> Eight-week no-code programme: foundations and prompt engineering, then Zapier, Make and self-hosted n8n, AI agents and multi-agent systems, APIs and voice agents, and freelance delivery — ending in a capstone where every student ships a live operational system. <strong>Students learn in Zapier because it is the fastest route to a working system;</strong> my own client delivery sits in n8n.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 05 / CONTACT ============ -->
+<section class="end" id="contact">
+  <div class="wrap">
+    <div class="lbl" style="margin-bottom:22px;">05 / Contact</div>
+    <h2>Have an automation problem worth solving?</h2>
+    <p>Tell me what is eating your team's time and I will tell you whether it is worth automating, and what it would take. Ecommerce brands and clinics especially welcome.</p>
+    <div class="acts">
+      <a href="mailto:estherenuma20@gmail.com" class="act key">estherenuma20@gmail.com</a>
+      <a href="https://www.linkedin.com/in/esther-enuma-a30a8b367/" class="act" target="_blank" rel="noopener">linkedin</a>
+      <a href="https://www.instagram.com/esther_enuma_/" class="act" target="_blank" rel="noopener">instagram</a>
+      <a href="https://web.facebook.com/esther.mobolaku" class="act" target="_blank" rel="noopener">facebook</a>
+      <!-- EDIT: paste your Google Calendar appointment-slots link
+      <a href="BOOKING_URL" class="act" target="_blank" rel="noopener">book 15 minutes</a>
+      -->
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span>esther enuma — ai automation specialist &amp; educator</span>
+    <span>uyo, nigeria</span>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var btn = document.getElementById('navToggle');
+  var menu = document.getElementById('mnav');
+  if (!btn || !menu) return;
+  function setOpen(open) {
+    menu.classList.toggle('open', open);
+    btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    btn.setAttribute('aria-label', open ? 'Close navigation menu' : 'Open navigation menu');
+    btn.textContent = open ? 'close' : 'menu';
+  }
+  btn.addEventListener('click', function () {
+    setOpen(!menu.classList.contains('open'));
+  });
+  menu.addEventListener('click', function (e) {
+    if (e.target.tagName === 'A') setOpen(false);
+  });
+})();
+</script>
+
+</body>
+</html>
