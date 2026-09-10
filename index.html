@@ -3,11 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Esther Enuma — AI Automation Specialist</title>
-<meta name="description" content="Esther Enuma builds AI automation systems on n8n: voice receptionists, lead pipelines, and order flows for ecommerce brands and clinics.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<title>Esther Enuma — AI Automation & Voice Agent Engineer</title>
+<meta name="description" content="Esther Enuma builds tested AI automation systems in n8n: voice receptionists, lead-response engines, and grounded customer-support agents.">
 <style>
 :root{
   --bg:#0c0c0c;
@@ -17,8 +14,8 @@
   --fg-3:#82827b;
   --line:#232322;
   --signal:#c3f53c;
-  --mono:'IBM Plex Mono',Menlo,Consolas,monospace;
-  --sans:'IBM Plex Sans',-apple-system,Arial,sans-serif;
+  --mono:Menlo,Consolas,'Liberation Mono',monospace;
+  --sans:-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif;
 }
 *{margin:0;padding:0;box-sizing:border-box;}
 html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;}
@@ -82,7 +79,8 @@ a{color:inherit;text-decoration:none;}
 .acts{display:flex;gap:12px;flex-wrap:wrap;}
 .act{
   font-family:var(--mono);font-size:13px;padding:11px 20px;
-  border:1px solid var(--line);color:var(--fg);
+  border:1px solid var(--line);color:var(--fg);cursor:pointer;
+  display:inline-flex;align-items:center;justify-content:center;min-height:44px;
 }
 .act:hover{border-color:var(--fg-2);}
 .act.key{background:var(--signal);border-color:var(--signal);color:#0c0c0c;font-weight:500;}
@@ -171,7 +169,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;
 
 <div class="bar">
   <div class="wrap">
-    <div class="id"><b>Esther Enuma</b><span> / AI Automation</span></div>
+    <div class="id"><b>Esther Enuma</b><span> / AI Automation &amp; Voice Agents</span></div>
     <nav>
       <a href="#work">Work</a>
       <a href="#builds">Builds</a>
@@ -196,10 +194,10 @@ footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;
   <div class="wrap">
     <div class="stat"><i></i>status: open for new automation projects</div>
     <h1>I build the systems your team <u>stops doing by hand.</u></h1>
-    <p class="sub">n8n, AI agents, and voice receptionists. Phones answered in under two seconds, lead pipelines that score and route themselves, assistants that reply from your own sources, order updates that go out without anyone typing them. Built, documented, and handed over so your team owns them.</p>
+    <p class="sub">I deploy three tested systems: a voice receptionist that books appointments, a lead-response engine that replies and routes in under a minute, and a customer-support agent grounded in approved company information. Built in n8n, documented clearly, and configured so your team owns the result.</p>
     <div class="acts">
       <a href="#work" class="act key">see the systems</a>
-      <a href="#builds" class="act">what I build</a>
+      <a href="#builds" class="act">what I deliver</a>
       <a href="#contact" class="act">get in touch</a>
     </div>
   </div>
@@ -210,18 +208,18 @@ footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;
   <div class="wrap">
     <div class="sec-head">
       <div class="lbl">01 / Work</div>
-      <h2>Systems built end to end, with the decisions that made them hold.</h2>
+      <h2>Three working systems, tested around the failures that usually break automation.</h2>
     </div>
 
     <div class="build">
       <div class="build-top">
         <div class="meta">
-          <div class="idx">BUILD 01</div>
-          <div class="tags" style="margin-top:10px;"><span class="tag live">shipped</span><span class="tag">flagship</span></div>
+          <div class="idx">SYSTEM 01</div>
+          <div class="tags" style="margin-top:10px;"><span class="tag live">shipped</span><span class="tag">voice</span></div>
         </div>
         <div>
-          <h3>AI Lead Qualification &amp; Routing</h3>
-          <div class="plat">intake form → database → llm scoring → branch routing</div>
+          <h3>AI Voice Receptionist</h3>
+          <div class="plat">conversation → live availability → booking → owner summary</div>
         </div>
       </div>
       <div class="build-grid">
@@ -230,28 +228,67 @@ footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;
           <div class="ba">
             <div>
               <h4>Before</h4>
-              <p>Every enquiry landed in a shared inbox. Someone had to read it, judge how serious it was, log it, and decide who should answer. Hot leads sat unread over weekends, and no two people scored a lead the same way.</p>
+              <p>After-hours and overflow calls reach voicemail. Staff must qualify every caller, check the calendar, create the appointment, and copy the details into a separate record.</p>
             </div>
             <div class="after">
               <h4>After</h4>
-              <p>Intake form writes to a central table, an LLM returns a category, a score out of ten and a one-line rationale, and the result is parsed back and routed — hot straight to Slack with full context, warm to email, the rest into a nurture sequence.</p>
+              <p>A browser-based voice receptionist qualifies the caller, checks live availability, books the selected slot, logs the call, and sends the owner a written summary.</p>
             </div>
           </div>
           <div class="chain">
-            <span>form</span><span>table</span><span class="hot">ai scoring</span><span>parse</span><span>branch</span><span>slack</span><span>email</span><span>nurture</span>
+            <span class="hot">call answered</span><span>qualify</span><span>check calendar</span><span>book</span><span>log</span><span>owner summary</span>
           </div>
           <div class="dec">
             <h4 class="lbl">Key decision</h4>
-            <p>The form writes to the table <em>before</em> the AI runs, so a model failure never loses a lead. Worst case it sits unscored, not gone.</p>
+            <p>If the calendar or another connected service is unavailable, the agent does not guess. It captures a callback request so a technical failure becomes a recoverable lead rather than a false booking.</p>
+          </div>
+          <div class="res">
+            <div class="n">1 call</div>
+            <div class="c">from spoken enquiry to a confirmed appointment, with the call details recorded for the owner.</div>
+          </div>
+          <div class="stack">vapi · n8n · google calendar · google sheets · gmail</div>
+          <!-- Add recorded demo and repository links here when ready. -->
+        </div>
+      </div>
+    </div>
+
+    <div class="build">
+      <div class="build-top">
+        <div class="meta">
+          <div class="idx">SYSTEM 02</div>
+          <div class="tags" style="margin-top:10px;"><span class="tag live">shipped</span><span class="tag">lead ops</span></div>
+        </div>
+        <div>
+          <h3>Lead Response Engine</h3>
+          <div class="plat">public form → storage → ai classification → reply → owner alert</div>
+        </div>
+      </div>
+      <div class="build-grid">
+        <div></div>
+        <div class="build-body">
+          <div class="ba">
+            <div>
+              <h4>Before</h4>
+              <p>Enquiries are checked manually, answered hours later, and tracked inconsistently. High-intent leads are easy to miss when the owner is busy or offline.</p>
+            </div>
+            <div class="after">
+              <h4>After</h4>
+              <p>Every web enquiry is stored, classified by intent and urgency, scored for purchase readiness, answered with a tailored first response, and escalated to the owner when intent is high.</p>
+            </div>
+          </div>
+          <div class="chain">
+            <span>capture</span><span>store first</span><span class="hot">classify</span><span>validate</span><span>reply</span><span>alert</span><span>update status</span>
+          </div>
+          <div class="dec">
+            <h4 class="lbl">Key decision</h4>
+            <p>The lead is written to storage before the model runs, and model output is validated and safely defaulted. An AI failure may delay classification; it never loses the enquiry.</p>
           </div>
           <div class="res">
             <div class="n">&lt; 60 sec</div>
-            <div class="c">from enquiry received to scored and routed. Previously up to a full working day, longer across a weekend.</div>
+            <div class="c">to deliver a useful first response in end-to-end testing while preserving the lead and its status.</div>
           </div>
-          <div class="stack">n8n · intake form · central table · openai · code node · branching · slack · email</div>
-          <!-- EDIT: paste your Loom link below, then delete this comment
-          <div class="acts"><a class="act key" href="LOOM_URL" target="_blank" rel="noopener">▶ watch it run (3 min)</a><a class="act" href="REPO_URL" target="_blank" rel="noopener">workflow json + screenshots</a></div>
-          -->
+          <div class="stack">n8n · google sheets · gmail · ai classification · javascript · json</div>
+          <!-- Add recorded demo and repository links here when ready. -->
         </div>
       </div>
     </div>
@@ -259,12 +296,12 @@ footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;
     <div class="build">
       <div class="build-top">
         <div class="meta">
-          <div class="idx">BUILD 02</div>
-          <div class="tags" style="margin-top:10px;"><span class="tag live">shipped</span></div>
+          <div class="idx">SYSTEM 03</div>
+          <div class="tags" style="margin-top:10px;"><span class="tag live">shipped</span><span class="tag">support agent</span></div>
         </div>
         <div>
-          <h3>Customer-Facing Enquiry Assistant</h3>
-          <div class="plat">curated knowledge base → guarded assistant → lead capture</div>
+          <h3>Customer-Support AI Agent</h3>
+          <div class="plat">chat → memory → knowledge tool → grounded response</div>
         </div>
       </div>
       <div class="build-grid">
@@ -273,118 +310,65 @@ footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;
           <div class="ba">
             <div>
               <h4>Before</h4>
-              <p>The same handful of questions, answered by a person, over and over, and only during working hours. Anyone browsing at 11pm got nothing and left.</p>
+              <p>Support teams repeatedly answer the same policy, delivery, refund, product, and opening-hours questions, while customers wait for someone to search the approved information.</p>
             </div>
             <div class="after">
               <h4>After</h4>
-              <p>A branded assistant answers instantly from a curated knowledge base, under an explicit instruction set — no prices, no commitments, and it declines rather than guesses. Real buying intent gets pushed into the enquiry form.</p>
+              <p>An AI agent remembers the conversation, calls a dedicated Airtable knowledge tool, and returns one approved answer. Unsupported questions are not answered from guesswork.</p>
             </div>
           </div>
           <div class="chain">
-            <span>knowledge base</span><span class="hot">assistant</span><span>guardrails</span><span>intent detected</span><span>form</span>
+            <span>chat</span><span>memory</span><span class="hot">knowledge tool</span><span>airtable search</span><span>one result</span><span>grounded reply</span>
           </div>
           <div class="dec">
             <h4 class="lbl">Key decision</h4>
-            <p>Architected one-way on purpose. The assistant can send people into the lead database but cannot read from it, so no customer data is reachable through a public interface.</p>
+            <p>Knowledge retrieval lives in a separate tool workflow that consolidates multiple Airtable records into one structured result. That prevents duplicate agent runs and keeps the main agent simple.</p>
           </div>
           <div class="res">
-            <div class="n">24 / 7</div>
-            <div class="c">answering, qualifying, and capturing intent outside working hours — the window where most of the traffic actually arrives.</div>
+            <div class="n">1 → 1</div>
+            <div class="c">one customer question produces one approved response instead of several Airtable items triggering duplicate answers.</div>
           </div>
-          <div class="stack">n8n · openai · chat interface · memory · lead capture form</div>
-          <!-- EDIT: paste your Loom link and repo link below, then delete this comment
-          <div class="acts"><a class="act key" href="LOOM_URL" target="_blank" rel="noopener">▶ watch it run (3 min)</a><a class="act" href="REPO_URL" target="_blank" rel="noopener">workflow json + screenshots</a></div>
-          -->
+          <div class="stack">n8n · airtable · openai · ai agent · conversation memory · tool-calling</div>
+          <!-- Add recorded demo and repository links here when ready. -->
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ============ 02 / BUILDS ============ -->
+<!-- ============ 02 / DELIVER ============ -->
 <section class="sec" id="builds">
   <div class="wrap">
     <div class="sec-head">
-      <div class="lbl">02 / What I build</div>
-      <h2>Six systems I build for clients, and who each one is for.</h2>
+      <div class="lbl">02 / What I deliver</div>
+      <h2>Proven starting points, configured around your business.</h2>
     </div>
-    <p class="note">Built on n8n. Every build ships with a recorded walkthrough, the workflow file, documentation, and a handover call.</p>
+    <p class="note">I begin from tested workflow JSON rather than a blank canvas. Each engagement adapts the rules, prompts, credentials, data and handoff to the client, then ships with documentation and a recorded walkthrough.</p>
 
     <div class="mini">
-      <div class="meta">
-        <div class="idx">01</div>
-        <div class="tags"><span class="tag">in build</span><span class="tag">voice</span></div>
-      </div>
+      <div class="meta"><div class="idx">01</div><div class="tags"><span class="tag live">available</span><span class="tag">voice</span></div></div>
       <div>
-        <h3>AI Voice Receptionist</h3>
-        <p>Answers the phone in about two seconds, day or night. Qualifies the caller, books straight into the calendar, texts the owner a summary, and hands off to a human when the conversation needs one. Owners estimate they miss five to ten percent of calls; measured, it is closer to a quarter.</p>
-        <div class="chain"><span class="hot">call answered</span><span>qualify</span><span>book</span><span>sms summary</span><span>human handoff</span></div>
-        <div class="for"><b>For:</b> Dental practices · med spas · home services · clinics · voice agencies needing build capacity<br><b>Stack:</b> vapi / retell · n8n · twilio · google calendar</div>
+        <h3>Voice Receptionist Deployment</h3>
+        <p>Configure the working receptionist for your services, hours, qualification questions, calendar, escalation rules and owner notifications.</p>
+        <div class="for"><b>Best for:</b> Dental practices · clinics · med spas · home services<br><b>Outcome:</b> Fewer missed calls and a direct path from conversation to booked appointment</div>
       </div>
     </div>
 
     <div class="mini">
-      <div class="meta">
-        <div class="idx">02</div>
-        <div class="tags"><span class="tag">in build</span></div>
-      </div>
+      <div class="meta"><div class="idx">02</div><div class="tags"><span class="tag live">available</span><span class="tag">lead ops</span></div></div>
       <div>
-        <h3>Lead Response Engine</h3>
-        <p>The n8n version of Build 01 above, extended: captures every enquiry across form, DM and email, classifies intent, replies inside five minutes, and runs a three-touch follow-up so nothing goes quiet unattended. Leads that wait two hours are usually already talking to someone else.</p>
-        <div class="chain"><span>capture</span><span class="hot">classify</span><span>reply &lt; 5 min</span><span>3-touch follow-up</span><span>log</span></div>
-        <div class="for"><b>For:</b> Any business where enquiries arrive faster than a person can triage them<br><b>Stack:</b> n8n · openai · airtable / notion · email · whatsapp</div>
+        <h3>Lead Response Deployment</h3>
+        <p>Connect the existing capture, classification, reply, owner-alert and tracking workflow to your form, inbox and business rules.</p>
+        <div class="for"><b>Best for:</b> Ecommerce · agencies · service businesses · teams receiving web enquiries<br><b>Outcome:</b> Faster first response and a visible record of every lead</div>
       </div>
     </div>
 
     <div class="mini">
-      <div class="meta">
-        <div class="idx">03</div>
-        <div class="tags"><span class="tag">in build</span></div>
-      </div>
+      <div class="meta"><div class="idx">03</div><div class="tags"><span class="tag live">available</span><span class="tag">support</span></div></div>
       <div>
-        <h3>Order &amp; Delivery Notifications</h3>
-        <p>Fills the silent window between payment and dispatch: confirmation, dispatch, delivery, review request, and automatic escalation when something goes wrong. That silence is where most “where is my order” tickets come from — commonly twenty to thirty percent of support volume.</p>
-        <div class="chain"><span>order</span><span>confirm</span><span>dispatch</span><span>deliver</span><span class="hot">review ask</span><span>escalate</span></div>
-        <div class="for"><b>For:</b> Ecommerce and DTC brands · importers · multi-brand vendors<br><b>Stack:</b> n8n · shopify / woocommerce · whatsapp · email · airtable</div>
-      </div>
-    </div>
-
-    <div class="mini">
-      <div class="meta">
-        <div class="idx">04</div>
-        <div class="tags"><span class="tag">in build</span></div>
-      </div>
-      <div>
-        <h3>Supplier Sourcing &amp; Landed Cost</h3>
-        <p>Vets suppliers against a consistent checklist, computes true landed cost including freight, duty, clearing and FX, and flags the risky ones before money moves. Most import margins are guesses; this makes them arithmetic.</p>
-        <div class="chain"><span>supplier intake</span><span>vet</span><span class="hot">landed cost</span><span>risk flag</span><span>decision</span></div>
-        <div class="for"><b>For:</b> Importers · curated marketplaces · wholesale and retail groups<br><b>Stack:</b> n8n · openai · airtable · fx and freight apis</div>
-      </div>
-    </div>
-
-    <div class="mini">
-      <div class="meta">
-        <div class="idx">05</div>
-        <div class="tags"><span class="tag">in build</span></div>
-      </div>
-      <div>
-        <h3>Content Repurposing Pipeline</h3>
-        <p>One asset in, ten out. A long video or article becomes clips, captions, and scheduled posts across platforms, with a human approval step before anything publishes.</p>
-        <div class="chain"><span>upload</span><span>transcribe</span><span class="hot">cut and caption</span><span>approve</span><span>schedule</span></div>
-        <div class="for"><b>For:</b> DTC brands · agencies · founders publishing consistently<br><b>Stack:</b> n8n · whisper · openai · buffer / meta api</div>
-      </div>
-    </div>
-
-    <div class="mini">
-      <div class="meta">
-        <div class="idx">06</div>
-        <div class="tags"><span class="tag">in build</span></div>
-      </div>
-      <div>
-        <h3>Owner Ops Dashboard</h3>
-        <p>Pulls sales, leads, delivery and support into one weekly digest written in plain English — what moved, what slipped, what needs a decision. For owners who currently find out by asking three people.</p>
-        <div class="chain"><span>pull sources</span><span>reconcile</span><span class="hot">summarise</span><span>weekly digest</span></div>
-        <div class="for"><b>For:</b> Multi-brand groups · service businesses · anyone running operations on spreadsheets<br><b>Stack:</b> n8n · openai · supabase · notion · email</div>
+        <h3>Grounded Support Agent Deployment</h3>
+        <p>Turn your approved FAQs and policies into a support agent that uses memory and tool-calling, returns one grounded answer, and refuses unsupported commitments.</p>
+        <div class="for"><b>Best for:</b> Ecommerce · education · internal support · service businesses<br><b>Outcome:</b> Routine questions answered consistently from information your team controls</div>
       </div>
     </div>
   </div>
@@ -443,7 +427,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;
     <div class="row">
       <div class="val">cybervast · cohort 3</div>
       <div>
-        <p><strong>AI Automation Instructor.</strong> Eight-week programme: foundations and prompt engineering, automation across Zapier, Make and n8n, AI agents and multi-agent systems, APIs and voice agents, and freelance delivery — ending in a capstone where every student ships a live operational system. <strong>I teach automation across Zapier, Make and n8n. I build on n8n.</strong></p>
+        <p><strong>AI Automation Instructor, Cybervast Cohort 3.</strong> I teach n8n workflow automation, AI-agent development, and prompt engineering to 13 learners, most from non-technical backgrounds. Ten of thirteen learners have shipped multiple working workflows. <strong>I teach across Zapier, Make and n8n; I build on n8n.</strong></p>
       </div>
     </div>
   </div>
@@ -454,7 +438,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;
   <div class="wrap">
     <div class="lbl" style="margin-bottom:22px;">05 / Contact</div>
     <h2>Have an automation problem worth solving?</h2>
-    <p>Tell me what is eating your team's time and I will tell you whether it is worth automating, and what it would take. Ecommerce brands and clinics especially welcome.</p>
+    <p>Tell me where calls, leads, or repeated support questions are consuming your team's time. I will show you the closest working system and what it would take to configure it for your business.</p>
     <div class="acts">
       <a href="mailto:estherenuma20@gmail.com" class="act key">estherenuma20@gmail.com</a>
       <a href="https://www.linkedin.com/in/estherenuma/" class="act" target="_blank" rel="noopener">linkedin</a>
@@ -469,7 +453,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;
 
 <footer>
   <div class="wrap">
-    <span>Esther Enuma — AI Automation Specialist &amp; Educator</span>
+    <span>Esther Enuma — AI Automation &amp; Voice Agent Engineer</span>
     <span>Uyo, Nigeria</span>
   </div>
 </footer>
@@ -488,8 +472,19 @@ footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;
   btn.addEventListener('click', function () {
     setOpen(!menu.classList.contains('open'));
   });
-  menu.addEventListener('click', function (e) {
-    if (e.target.tagName === 'A') setOpen(false);
+
+  document.querySelectorAll('a[href^="#"]').forEach(function (link) {
+    link.addEventListener('click', function (event) {
+      var target = document.querySelector(link.getAttribute('href'));
+      if (!target) return;
+      event.preventDefault();
+      target.scrollIntoView({
+        behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth',
+        block: 'start'
+      });
+      if (history.replaceState) history.replaceState(null, '', link.getAttribute('href'));
+      setOpen(false);
+    });
   });
 })();
 </script>
