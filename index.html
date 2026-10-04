@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Esther Enuma — AI Automation & Voice Agent Engineer</title>
-<meta name="description" content="Esther Enuma builds tested AI automation systems in n8n: voice receptionists, lead-response engines, and grounded customer-support agents.">
+<title>Esther Enuma — AI Automation & Digital Systems Engineer</title>
+<meta name="description" content="Esther Enuma designs and deploys reliable AI automation, voice agents, lead-response workflows, support systems, and conversion-focused web experiences.">
 <style>
 :root{
   --bg:#0c0c0c;
@@ -143,6 +143,30 @@ section[id],header[id]{scroll-margin-top:74px;}
 .mini .for b{color:var(--fg-2);font-weight:500;}
 .note{font-family:var(--mono);font-size:13px;color:var(--fg-3);max-width:74ch;margin-bottom:8px;}
 
+/* WEB EXPERIENCES */
+.web-intro{color:var(--fg-2);max-width:70ch;margin:-18px 0 40px 220px;}
+.web-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px;}
+.web-card{
+  border:1px solid var(--line);background:var(--bg-2);
+  display:flex;flex-direction:column;min-width:0;
+}
+.web-card:last-child{grid-column:1 / -1;}
+.web-shot{
+  display:block;aspect-ratio:16/9;overflow:hidden;
+  border-bottom:1px solid var(--line);background:#181818;
+}
+.web-shot img{
+  width:100%;height:100%;display:block;object-fit:cover;object-position:top;
+  transition:transform .35s ease;
+}
+.web-card:hover .web-shot img{transform:scale(1.015);}
+.web-copy{padding:24px;display:flex;flex-direction:column;gap:12px;flex:1;}
+.web-meta{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;}
+.web-num{font-family:var(--mono);font-size:11.5px;color:var(--signal);}
+.web-card h3{font-weight:500;font-size:22px;letter-spacing:-0.015em;}
+.web-card p{color:var(--fg-2);font-size:14.5px;max-width:60ch;}
+.web-card .acts{margin-top:auto;padding-top:6px;}
+
 /* END */
 .end{padding:80px 0;}
 .end h2{font-weight:500;font-size:clamp(26px,3.6vw,40px);line-height:1.1;letter-spacing:-0.025em;max-width:20ch;margin-bottom:22px;}
@@ -153,6 +177,9 @@ footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;
 @media (max-width:860px){
   .wrap{padding:0 24px;}
   .sec-head,.row,.build-top,.build-grid,.wks-wrap,.mini{grid-template-columns:1fr;gap:14px;}
+  .web-intro{margin:-12px 0 32px;}
+  .web-grid{grid-template-columns:1fr;}
+  .web-card:last-child{grid-column:auto;}
   .wks-wrap{margin-top:8px;}
   .wks-wrap > div:first-child{display:none;}
   .wk{grid-template-columns:56px 1fr;gap:12px;}
@@ -169,9 +196,10 @@ footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;
 
 <div class="bar">
   <div class="wrap">
-    <div class="id"><b>Esther Enuma</b><span> / AI Automation &amp; Voice Agents</span></div>
+    <div class="id"><b>Esther Enuma</b><span> / AI Automation &amp; Digital Systems</span></div>
     <nav>
       <a href="#work">Work</a>
+      <a href="#web">Websites</a>
       <a href="#builds">Builds</a>
       <a href="#about">About</a>
       <a href="#teaching">Teaching</a>
@@ -182,6 +210,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;
   <div class="mnav" id="mnav">
     <div class="wrap">
       <a href="#work">Work</a>
+      <a href="#web">Websites</a>
       <a href="#builds">Builds</a>
       <a href="#about">About</a>
       <a href="#teaching">Teaching</a>
@@ -192,13 +221,13 @@ footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;
 
 <header class="head">
   <div class="wrap">
-    <div class="stat"><i></i>status: open for new automation projects</div>
-    <h1>I build the systems your team <u>stops doing by hand.</u></h1>
-    <p class="sub">I deploy three tested systems: a voice receptionist that books appointments, a lead-response engine that replies and routes in under a minute, and a customer-support agent grounded in approved company information. Built in n8n, documented clearly, and configured so your team owns the result.</p>
+    <div class="stat"><i></i>status: open for AI automation &amp; digital systems projects</div>
+    <h1>I build AI systems that turn customer conversations into <u>business outcomes.</u></h1>
+    <p class="sub">I design and deploy voice agents, lead-response workflows, support systems, and conversion-focused web experiences for service businesses and growing teams. Every system is tested, documented, and built for the client to own.</p>
     <div class="acts">
-      <a href="#work" class="act key">see the systems</a>
-      <a href="#builds" class="act">what I deliver</a>
-      <a href="#contact" class="act">get in touch</a>
+      <a href="#work" class="act key">view AI systems</a>
+      <a href="#web" class="act">explore websites</a>
+      <a href="#contact" class="act">discuss a project</a>
     </div>
   </div>
 </header>
@@ -345,11 +374,69 @@ footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;
   </div>
 </section>
 
-<!-- ============ 02 / DELIVER ============ -->
+<!-- ============ 02 / WEB EXPERIENCES ============ -->
+<section class="sec" id="web">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="lbl">02 / Web experiences</div>
+      <h2>Customer-facing websites designed to make the business clear, credible, and easy to act on.</h2>
+    </div>
+    <p class="web-intro">I also design and develop the digital experiences through which customers discover a brand, understand its offer, and take the next step.</p>
+
+    <div class="web-grid">
+      <article class="web-card">
+        <a class="web-shot" href="https://lagos-luxe.netlify.app/" target="_blank" rel="noopener" aria-label="Open Lagos Luxe Interiors website">
+          <img src="assets/lagos-luxe.png" alt="Lagos Luxe Interiors website homepage">
+        </a>
+        <div class="web-copy">
+          <div class="web-meta">
+            <div class="web-num">WEB 01</div>
+            <div class="tags"><span class="tag live">live</span><span class="tag">interiors</span></div>
+          </div>
+          <h3>Lagos Luxe Interiors</h3>
+          <p>A refined lead-generation website for an interiors and custom-furniture studio, with clear service positioning and prominent quote requests.</p>
+          <div class="acts"><a href="https://lagos-luxe.netlify.app/" class="act key" target="_blank" rel="noopener">view live site</a></div>
+        </div>
+      </article>
+
+      <article class="web-card">
+        <a class="web-shot" href="https://lauregspieces.netlify.app/" target="_blank" rel="noopener" aria-label="Open Laureg's Pieces website">
+          <img src="assets/lauregs-pieces.png" alt="Laureg's Pieces fashion website homepage">
+        </a>
+        <div class="web-copy">
+          <div class="web-meta">
+            <div class="web-num">WEB 02</div>
+            <div class="tags"><span class="tag live">live</span><span class="tag">fashion</span></div>
+          </div>
+          <h3>Laureg’s Pieces</h3>
+          <p>A visual fashion and lifestyle storefront that presents handmade collections clearly and guides customers toward ordering on WhatsApp.</p>
+          <div class="acts"><a href="https://lauregspieces.netlify.app/" class="act key" target="_blank" rel="noopener">view live site</a></div>
+        </div>
+      </article>
+
+      <article class="web-card">
+        <a class="web-shot" href="https://perfectumcre8ive.netlify.app/" target="_blank" rel="noopener" aria-label="Open Perfectum Cre8ive website">
+          <img src="assets/perfectum-cre8ive.png" alt="Perfectum Cre8ive studio website homepage">
+        </a>
+        <div class="web-copy">
+          <div class="web-meta">
+            <div class="web-num">WEB 03</div>
+            <div class="tags"><span class="tag live">live</span><span class="tag">creative studio</span></div>
+          </div>
+          <h3>Perfectum Cre8ive</h3>
+          <p>A bold portfolio and enquiry website for a book-design studio, built to showcase visual work and move prospective clients toward a quote.</p>
+          <div class="acts"><a href="https://perfectumcre8ive.netlify.app/" class="act key" target="_blank" rel="noopener">view live site</a></div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 03 / DELIVER ============ -->
 <section class="sec" id="builds">
   <div class="wrap">
     <div class="sec-head">
-      <div class="lbl">02 / What I deliver</div>
+      <div class="lbl">03 / What I deliver</div>
       <h2>Proven starting points, configured around your business.</h2>
     </div>
     <p class="note">I begin from tested workflow JSON rather than a blank canvas. Each engagement adapts the rules, prompts, credentials, data and handoff to the client, then ships with documentation and a recorded walkthrough.</p>
@@ -383,11 +470,11 @@ footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;
   </div>
 </section>
 
-<!-- ============ 03 / ABOUT ============ -->
+<!-- ============ 04 / ABOUT ============ -->
 <section class="sec" id="about">
   <div class="wrap">
     <div class="sec-head">
-      <div class="lbl">03 / About</div>
+      <div class="lbl">04 / About</div>
       <h2>A builder first. I teach because I build, not the other way round.</h2>
     </div>
 
@@ -423,14 +510,18 @@ footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;
       <div class="val">data</div>
       <div class="val">Airtable · Notion · Supabase · Pinecone · Google Sheets</div>
     </div>
+    <div class="row">
+      <div class="val">digital experiences</div>
+      <div class="val">Responsive websites · service positioning · conversion paths · client-ready handoff</div>
+    </div>
   </div>
 </section>
 
-<!-- ============ 04 / TEACHING ============ -->
+<!-- ============ 05 / TEACHING ============ -->
 <section class="sec" id="teaching">
   <div class="wrap">
     <div class="sec-head">
-      <div class="lbl">04 / Teaching</div>
+      <div class="lbl">05 / Teaching</div>
       <h2>I train other automation specialists.</h2>
     </div>
     <div class="row">
@@ -442,12 +533,12 @@ footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;
   </div>
 </section>
 
-<!-- ============ 05 / CONTACT ============ -->
+<!-- ============ 06 / CONTACT ============ -->
 <section class="end" id="contact">
   <div class="wrap">
-    <div class="lbl" style="margin-bottom:22px;">05 / Contact</div>
-    <h2>Have an automation problem worth solving?</h2>
-    <p>Tell me where calls, leads, or repeated support questions are consuming your team's time. I will show you the closest working system and what it would take to configure it for your business.</p>
+    <div class="lbl" style="margin-bottom:22px;">06 / Contact</div>
+    <h2>Have a system or digital experience worth building?</h2>
+    <p>Tell me where calls, leads, support questions, or a weak customer journey are slowing the business down. I will show you the closest working solution and what it would take to deploy it.</p>
     <div class="acts">
       <a href="mailto:estherenuma20@gmail.com" class="act key">estherenuma20@gmail.com</a>
       <a href="https://www.linkedin.com/in/estherenuma/" class="act" target="_blank" rel="noopener">linkedin</a>
@@ -462,7 +553,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;
 
 <footer>
   <div class="wrap">
-    <span>Esther Enuma — AI Automation &amp; Voice Agent Engineer</span>
+    <span>Esther Enuma — AI Automation &amp; Digital Systems Engineer</span>
     <span>Uyo, Nigeria</span>
   </div>
 </footer>
